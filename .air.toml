@@ -1,0 +1,9 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  bin = "main"  # Name of the output binary
+  cmd = "go build -o {{.Output}} {{.Input}}"  # Build command to place the binary in the bin directory
+  exclude = ["tmp/*", "client/*"]  # Exclude these directories
+  include = ["**/*.go"]  # Include all Go files
+  ignore = ["tmp/*"]  # Ignore files in tmp directory
