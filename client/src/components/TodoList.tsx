@@ -28,6 +28,7 @@ const TodoList = () => {
 
       } catch (error) {
         console.log(error)
+        return []
       }
     }
   })
@@ -46,7 +47,7 @@ const TodoList = () => {
         Today's Tasks
       </Text>
 
-      {isLoading && todos?.length === 0 && (
+      {!isLoading && todos?.length === 0 && (
         <Stack alignItems={"center"} gap='3'>
           <Text fontSize={"xl"} textAlign={"center"} color={"gray.500"}>
             All tasks completed! 🤞
